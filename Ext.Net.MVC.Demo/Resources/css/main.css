@@ -1,0 +1,19 @@
+﻿body {
+    font : normal 12px tahoma, arial, verdana;
+}
+
+.white-menu .x-menu {
+    background : white !important;
+}
+
+.x-window-mc {
+    background-color : #F4F4F4 !important;
+}
+
+.title-label{
+  color:black;
+}
+
+.x-theme-slate .title-label{
+  color:white;
+}

@@ -1,0 +1,128 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Xml.dll" #>
+<#@ assembly name="Ext.Net.Factory.dll" #>
+<#@ assembly name="Ext.Net.Utilities.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Serialization" #>
+<#@ import namespace="Ext.Net.Factory" #>
+<#@ import namespace="Ext.Net.Utilities" #>
+<#
+	XmlSerializer serializer = new XmlSerializer(typeof(Root));
+    FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\Ext.Net\\Build\\Resources\\ExtNet\\extnet\\ext-api.xml", FileMode.Open);
+    Root root = (Root)serializer.Deserialize(new XmlTextReader(fs));
+    fs.Close();
+    
+    root.Sweep();
+#>
+using System;  
+using System.ComponentModel; 
+using System.Web.UI;
+
+namespace Ext.Net
+{
+	<#
+	string className = "";
+	string eventName = "";
+	string eventNamePrivate = "";
+	string eventType = "";
+	string eventSummary = "";
+	string eventParamName = "";
+	string eventParamSummary = "";
+	string inheritName = "";
+	string inheritTemplate = ": {0}";
+	
+	List<Class> classes = root.GetAllClasses();
+	
+	foreach(Class cls in classes) 
+	{
+		if (cls.Name.Equals("Component") || !cls.IsChildOf("Ext.Component") || cls.Subclasses.Count < 1)
+		{
+			continue;
+		}
+
+		className = string.Concat(StringUtils.ToTitleCase(cls.Name.Replace('.', ''), "Listeners");
+
+		if (cls.Extends != null)
+		{
+			inheritName = string.Concat(": ", cls.Extends.Name, "Listeners");
+		}
+	#>public partial class <#= className #> <#= inheritName #>
+	{
+	<#		
+	
+	if (cls.Events.Count > 0)
+		{
+			foreach(Event evt in cls.Events)
+			{
+				eventName = StringUtils.MakeEventName(evt.Name);
+				//eventName = StringUtils.ToTitleCase(evt.Name);
+				eventNamePrivate = evt.Name.Equals("event") ? "evt" : evt.Name.ToLower();
+				
+				try
+				{
+				//if (evt != null && StringUtils.IsNotEmpty(evt.Type))
+				//{
+					eventType = evt.Name;
+				//}
+				}
+				catch (Exception ex) { }
+				
+				if (StringUtils.IsNotEmpty(evt.Summary)) 
+				{
+					//eventSummary = evt.Summary.Replace("Fires", "ZZZ");
+				}
+			
+	#>
+	private ComponentListener <#= eventNamePrivate #>;
+        
+		/// <summary>
+        /// 
+        /// </summary>
+        <# 
+		for(int i = 0; i < evt.Parameters.Count; i++)
+		{
+			if (evt.Parameters[i] != null)
+			{
+				eventParamName = evt.Parameters[i].Name;
+				
+				if (evt.Parameters[i].Summary != null && StringUtils.IsNotEmpty(evt.Parameters[i].Summary))
+				{
+					eventParamSummary = evt.Parameters[i].Summary;//.Replace("\"", "\\"");
+				}
+		#>
+[ListenerArgument(<#= i.ToString() #>, "<#= eventParamName #>", typeof(object), "<#= eventParamSummary #>")]
+		<#	}
+		}
+		#>[TypeConverter(typeof(ExpandableObjectConverter))]
+        [ClientConfig("<#= eventNamePrivate #>", typeof(ListenerJsonConverter))]
+        [PersistenceMode(PersistenceMode.InnerProperty)]
+        [NotifyParentProperty(true)]
+        [Description("")] 
+        public virtual ComponentListener <#= eventName #>
+        {
+            get
+            {
+                if (this.<#= eventNamePrivate #> == null)
+                {
+                    this.<#= eventNamePrivate #> = new ComponentListener();
+                }
+                
+                return this.<#= eventNamePrivate #>;
+            }
+        }
+    
+			<#				
+			}
+		}
+		#>
+}
+	
+	<#
+	} 
+	#>
+
+	}

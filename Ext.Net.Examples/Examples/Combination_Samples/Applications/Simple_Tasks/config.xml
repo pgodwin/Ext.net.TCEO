@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<example>
+	<description>		
+	</description>
+    <include>
+        <file url="Classes/UI/TasksGrid.cs" />
+        <file url="Classes/Logic/TasksGrid.cs" />
+        <file url="Classes/UI/TasksTopBar.cs" />
+        <file url="Classes/Logic/TasksTopBar.cs" />
+        <file url="Classes/UI/TasksTree.cs" />
+        <file url="Classes/Logic/TasksTree.cs" />
+        <file url="Classes/UI/TaskWindow.cs" />
+        <file url="Classes/Logic/TaskWindow.cs" />
+    </include>
+</example>

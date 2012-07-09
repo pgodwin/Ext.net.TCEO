@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ext.Net.UX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Classes>
+    <Class Name="CenterMarker" Extends="Marker">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="GeoCodeAddress" Type="string" DefaultValue="&quot;&quot;">
+          <Summary><![CDATA[Sends a request to Google servers to geocode the specified address.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;geoCodeAddr&quot;" />
+            <Attribute Type="DefaultValue" RawValue="&quot;&quot;" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Sends a request to Google servers to geocode the specified address." />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="GMapPanel" Extends="GMapPanelBase">
+      <Summary><![CDATA[GMap Panel]]></Summary>
+      <Attributes>
+        <Attribute Type="Designer" RawValue="typeof(EmptyDesigner)" />
+        <Attribute Type="DefaultProperty" RawValue="&quot;&quot;" />
+        <Attribute Type="ToolboxBitmap" RawValue="typeof(UX.GMapPanel), &quot;Extensions.GMapPanel.GMapPanel.bmp&quot;" />
+        <Attribute Type="ToolboxData" RawValue="&quot;&lt;{0}:GMapPanel runat=\&quot;server\&quot; Title=\&quot;Google Map\&quot; Height=\&quot;300\&quot;&gt;&lt;/{0}:GMapPanel&gt;&quot;" />
+        <Attribute Type="Description" RawValue="GMap Panel" />
+      </Attributes>
+      <ConfigOptions />
+      <Methods />
+    </Class>
+    <Class Name="GMapPanelBase" Abstract="true" Extends="Panel">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Html" Modifier="Override" Type="string">
+          <Attributes>
+            <Attribute Type="Browsable" RawValue="false" />
+            <Attribute Type="ConfigOption" RawValue="JsonMode.Ignore" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="ContentEl" Modifier="Override" Type="string">
+          <Attributes>
+            <Attribute Type="Browsable" RawValue="false" />
+            <Attribute Type="ConfigOption" RawValue="JsonMode.Ignore" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="ZoomLevel" Type="int" DefaultValue="3">
+          <Summary><![CDATA[The zoom level of the blowup map in the info window.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="3" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="The zoom level of the blowup map in the info window." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Yaw" Type="int" DefaultValue="180">
+          <Summary><![CDATA[Used by street view. The camera yaw in degrees relative to true north. True north is 0 degrees, east is 90 degrees, south is 180 degrees, west is 270 degrees.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="180" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Used by street view. The camera yaw in degrees relative to true north. True north is 0 degrees, east is 90 degrees, south is 180 degrees, west is 270 degrees." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Pitch" Type="int" DefaultValue="0">
+          <Summary><![CDATA[Used by street view. The camera pitch in degrees, relative to the street view vehicle. Ranges from 90 degrees (directly upwards) to -90 degrees (directly downwards).]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="0" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Used by street view. The camera pitch in degrees, relative to the street view vehicle. Ranges from 90 degrees (directly upwards) to -90 degrees (directly downwards)." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Zoom" Type="int" DefaultValue="0">
+          <Summary><![CDATA[Used by street view. The zoom level. Fully zoomed-out is level 0, zooming in increases the zoom level.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="0" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Used by street view. The zoom level. Fully zoomed-out is level 0, zooming in increases the zoom level." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GMapType" Type="GMapType" DefaultValue="GMapType.Map">
+          <Summary><![CDATA[GMap type]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;gmapType&quot;, JsonMode.ToLower" />
+            <Attribute Type="DefaultValue" RawValue="GMapType.Map" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="GMap type" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="MapConfiguration" Type="MapConfiguration" DefaultValue="null">
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;mapConfOpts&quot;,typeof(MapPropertiesJsonConverter)" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="null" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="MapControls" Type="MapControls" DefaultValue="null">
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;mapControls&quot;,typeof(MapPropertiesJsonConverter)" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="null" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="CenterMarker" Type="CenterMarker" DefaultValue="null">
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;setCenter&quot;, JsonMode.Object" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="null" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Markers" Type="MarkerCollection" DefaultValue="null">
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;markers&quot;, JsonMode.AlwaysArray" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="null" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="InputTextMask" Extends="Plugin">
+      <Summary><![CDATA[InputTextMask plugin used for mask/regexp operations]]></Summary>
+      <Attributes>
+        <Attribute Type="ToolboxBitmap" RawValue="typeof(UX.InputTextMask), &quot;Build.Resources.ToolboxIcons.Plugin.bmp&quot;" />
+        <Attribute Type="ToolboxData" RawValue="&quot;&lt;{0}:InputTextMask runat=\&quot;server\&quot; /&gt;&quot;" />
+        <Attribute Type="Description" RawValue="InputTextMask plugin used for mask/regexp operations" />
+      </Attributes>
+      <ConfigOptions>
+        <ConfigOption Name="Mask" Type="string" DefaultValue="&quot;&quot;">
+          <Summary><![CDATA[The InputTextMask]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="&quot;&quot;" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="The InputTextMask" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="ClearWhenInvalid" Type="bool" DefaultValue="true">
+          <Summary><![CDATA[True to clear the mask when the field blurs and the text is invalid. Optional, default is true]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="true" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="True to clear the mask when the field blurs and the text is invalid. Optional, default is true" />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MapConfiguration" Extends="StateManagedItem">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Dragging" Type="bool" DefaultValue="true">
+          <Summary><![CDATA[Enables the dragging of the map (enabled by default).]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="true" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables the dragging of the map (enabled by default)." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="InfoWindow" Type="bool" DefaultValue="true">
+          <Summary><![CDATA[Enables info window operations on the map (enabled by default).]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="true" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables info window operations on the map (enabled by default)." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="DoubleClickZoom" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Enables double click to zoom in and out (disabled by default).]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables double click to zoom in and out (disabled by default)." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="ContinuousZoom" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Enables continuous smooth zooming for select browsers (disabled by default).]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables continuous smooth zooming for select browsers (disabled by default)." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GoogleBar" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Enables the GoogleBar, an integrated search control, to the map. When enabled, this control takes the place of the default Powered By Google logo. Note that this control is not enabled by default.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables the GoogleBar, an integrated search control, to the map. When enabled, this control takes the place of the default Powered By Google logo. Note that this control is not enabled by default." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="ScrollWheelZoom" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Enables zooming using a mouse's scroll wheel. Note: scroll wheel zoom is disabled by default.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Enables zooming using a mouse's scroll wheel. Note: scroll wheel zoom is disabled by default." />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MapControls" Extends="StateManagedItem">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="GSmallMapControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a control with buttons to pan in four directions, and zoom in and zoom out.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a control with buttons to pan in four directions, and zoom in and zoom out." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GLargeMapControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a control with buttons to pan in four directions, and zoom in and zoom out, and a zoom slider.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a control with buttons to pan in four directions, and zoom in and zoom out, and a zoom slider." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GSmallZoomControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a control with buttons to zoom in and zoom out.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a control with buttons to zoom in and zoom out." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GScaleControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a control that displays the map scale.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a control that displays the map scale." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GMapTypeControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a standard map type control for selecting and switching between supported map types via buttons.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a standard map type control for selecting and switching between supported map types via buttons." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GMenuMapTypeControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a drop-down map type control for switching between supported map types.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a drop-down map type control for switching between supported map types." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GHierarchicalMapTypeControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a 'nested' map type control for selecting and switching between supported map types via buttons and nested checkboxes.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a 'nested' map type control for selecting and switching between supported map types via buttons and nested checkboxes." />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="GOverviewMapControl" Type="bool" DefaultValue="false">
+          <Summary><![CDATA[Creates a collapsible overview mini-map in the corner of the main map for reference location and navigation (through dragging). The GOverviewMapControl creates an overview map with a one-pixel black border.]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Creates a collapsible overview mini-map in the corner of the main map for reference location and navigation (through dragging). The GOverviewMapControl creates an overview map with a one-pixel black border." />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MapPropertiesJsonConverter" Extends="ExtJsonConverter">
+      <Attributes />
+      <ConfigOptions />
+      <Methods />
+    </Class>
+    <Class Name="Marker" Extends="StateManagedItem">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Lat" Type="double" DefaultValue="0.0">
+          <Summary><![CDATA[The latitude coordinate]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="0.0" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="The latitude coordinate" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Lng" Type="double" DefaultValue="0.0">
+          <Summary><![CDATA[The longitude  coordinate]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="0.0" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="The longitude  coordinate" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Options" Type="MarkerOptions" DefaultValue="null">
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;marker&quot;,JsonMode.Object" />
+            <Attribute Type="Category" RawValue="&quot;Config Options&quot;" />
+            <Attribute Type="DefaultValue" RawValue="null" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+        <ConfigOption Name="Listeners" Type="MarkerListeners">
+          <Summary><![CDATA[Client-side JavaScript EventHandlers]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" RawValue="&quot;listeners&quot;, JsonMode.Object" />
+            <Attribute Type="Category" RawValue="&quot;Events&quot;" />
+            <Attribute Type="Themeable" RawValue="false" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="DesignerSerializationVisibility" RawValue="DesignerSerializationVisibility.Visible" />
+            <Attribute Type="Description" RawValue="Client-side JavaScript EventHandlers" />
+            <Attribute Type="ViewStateMember" />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MarkerCollection" Extends="StateManagedCollection&lt;Marker&gt;">
+      <Attributes />
+      <ConfigOptions />
+      <Methods />
+    </Class>
+    <Class Name="MarkerDirectEvents" Extends="ComponentDirectEvents">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Click" Type="ComponentDirectEvent">
+          <Summary><![CDATA[Fires when this marker is clicked.]]></Summary>
+          <Attributes>
+            <Attribute Type="ListenerArgument" RawValue="0, &quot;e&quot;, typeof(object), &quot;The click event&quot;" />
+            <Attribute Type="TypeConverter" RawValue="typeof(ExpandableObjectConverter)" />
+            <Attribute Type="ConfigOption" RawValue="&quot;click&quot;, typeof(DirectEventJsonConverter)" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Fires when this marker is clicked." />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MarkerListeners" Extends="ComponentListeners">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Click" Type="ComponentListener">
+          <Summary><![CDATA[Fires when this marker is clicked.]]></Summary>
+          <Attributes>
+            <Attribute Type="ListenerArgument" RawValue="0, &quot;el&quot;, typeof(Button), &quot;this&quot;" />
+            <Attribute Type="ListenerArgument" RawValue="1, &quot;e&quot;, typeof(object), &quot;The click event&quot;" />
+            <Attribute Type="TypeConverter" RawValue="typeof(ExpandableObjectConverter)" />
+            <Attribute Type="ConfigOption" RawValue="&quot;click&quot;, typeof(ListenerJsonConverter)" />
+            <Attribute Type="PersistenceMode" RawValue="PersistenceMode.InnerProperty" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="Fires when this marker is clicked." />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+    <Class Name="MarkerOptions" Extends="StateManagedItem">
+      <Attributes />
+      <ConfigOptions>
+        <ConfigOption Name="Title" Type="string" DefaultValue="&quot;&quot;">
+          <Summary><![CDATA[This string will appear as tooltip on the marker]]></Summary>
+          <Attributes>
+            <Attribute Type="ConfigOption" />
+            <Attribute Type="DefaultValue" RawValue="&quot;&quot;" />
+            <Attribute Type="NotifyParentProperty" RawValue="true" />
+            <Attribute Type="Description" RawValue="This string will appear as tooltip on the marker" />
+          </Attributes>
+        </ConfigOption>
+      </ConfigOptions>
+      <Methods />
+    </Class>
+  </Classes>
+</Ext.Net.UX>

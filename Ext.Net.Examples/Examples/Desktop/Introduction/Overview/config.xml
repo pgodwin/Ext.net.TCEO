@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<example>
+	<description>
+		<![CDATA[Mimics an operating system with support for multi-windows, task bar and start menu.]]>		
+	</description>  
+</example>

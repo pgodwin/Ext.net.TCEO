@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E7DEBDF-20A8-4BE7-8BDE-6A42C7AD91C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ext.Net.Examples</RootNamespace>
+    <AssemblyName>Ext.Net.Examples</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b9a188c8922137c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Ext.Net\Build\ReferenceAssemblies\Json.NET\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Wilco.SyntaxHighlighter, Version=0.5.0.0, Culture=neutral, PublicKeyToken=fb87150479c2990b, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Module\AnalyticsFilter.cs" />
+    <Compile Include="Code\Module\AnalyticsModule.cs" />
+    <Compile Include="Code\Northwind\EntitiesAdditions.cs" />
+    <Compile Include="Code\Northwind\Northwind.cs">
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Northwind\Northwind.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\SerializableEntity\EnumerableExtension.cs" />
+    <Compile Include="Code\SerializableEntity\SerializableEntity.cs" />
+    <Compile Include="Code\SimpleTasks\SimpleTasks.cs">
+      <DependentUpon>SimpleTasks.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\SimpleTasks\SimpleTasks.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimpleTasks.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\UI\UIHelpers.cs" />
+    <Compile Include="ExampleLoader.ashx.cs">
+      <DependentUpon>ExampleLoader.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Calendar\Overview\Shared\Code\Data.cs" />
+    <Compile Include="Examples\Calendar\Overview\Shared\Code\RemoteService.asmx.cs">
+      <DependentUpon>RemoteService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\Calendar\Overview\Shared\Common\EventsViewer.ascx.cs">
+      <DependentUpon>EventsViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examples\Calendar\Overview\Shared\Common\EventsViewer.ascx.designer.cs">
+      <DependentUpon>EventsViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\Logic\FeedGrid.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\Logic\FeedTree.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\Logic\FeedWindow.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\Logic\MainPanel.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\UI\FeedGrid.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\UI\FeedTree.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\UI\FeedViewPort.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\UI\FeedWindow.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\Classes\UI\MainPanel.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Feed_Viewer\FeedProxy.ashx.cs">
+      <DependentUpon>FeedProxy.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\Logic\TasksGrid.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\Logic\TasksTopBar.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\Logic\TasksTree.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\Logic\TaskWindow.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\UI\TasksGrid.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\UI\TasksTree.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\UI\TasksTopBar.cs" />
+    <Compile Include="Examples\Combination_Samples\Applications\Simple_Tasks\Classes\UI\TaskWindow.cs" />
+    <Compile Include="Examples\Events\DirectEvents\WebService\TestService.asmx.cs">
+      <DependentUpon>TestService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\ID_Mode\Alias.ascx.cs">
+      <DependentUpon>Alias.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\ID_Mode\Alias.ascx.designer.cs">
+      <DependentUpon>Alias.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\ID_Mode\NoneID.Master.cs">
+      <DependentUpon>NoneID.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\ID_Mode\NoneID.Master.designer.cs">
+      <DependentUpon>NoneID.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\WebService\JsonService.asmx.cs">
+      <DependentUpon>JsonService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\Events\DirectMethods\WebService\XmlService.asmx.cs">
+      <DependentUpon>XmlService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\Form\ComboBox\Custom_Search\Plant.cs" />
+    <Compile Include="Examples\Form\ComboBox\Custom_Search\Plants.ashx.cs">
+      <DependentUpon>Plants.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Form\ComboBox\Linked_ComboBoxes\Cities.asmx.cs">
+      <DependentUpon>Cities.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\Form\Validation\Remote_Validation\ValidationService.asmx.cs">
+      <DependentUpon>ValidationService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\SubmitHandler.ashx.cs">
+      <DependentUpon>SubmitHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Base\Session_DB.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Base\RestRequest.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Controller\Controller.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Controller\PersonController.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Model\PersonModel.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\Classes\Model\Model.cs" />
+    <Compile Include="Examples\GridPanel\Restful\Overview\RestfulPersons.ashx.cs">
+      <DependentUpon>RestfulPersons.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\EmployeesControler.ashx.cs">
+      <DependentUpon>EmployeesControler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\JsonHandler.ashx.cs">
+      <DependentUpon>JsonHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\Plant.cs" />
+    <Compile Include="Examples\GridPanel\Shared\PlantHandler.ashx.cs">
+      <DependentUpon>PlantHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\PlantJsonService.asmx.cs">
+      <DependentUpon>PlantJsonService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\PlantService.asmx.cs">
+      <DependentUpon>PlantService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\SuppliersSave.ashx.cs">
+      <DependentUpon>SuppliersSave.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\SuppliersSaveWithConfirmation.ashx.cs">
+      <DependentUpon>SuppliersSaveWithConfirmation.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\SuppliersService.asmx.cs">
+      <DependentUpon>SuppliersService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\GridPanel\Shared\FiltersTestData.cs" />
+    <Compile Include="Examples\TreePanel\Advanced\Remote_Mode_with_Service\RemoteTree.asmx.cs">
+      <DependentUpon>RemoteTree.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\TreePanel\Loaders\Using_Handler\TreeLoader.ashx.cs">
+      <DependentUpon>TreeLoader.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\TreePanel\Loaders\WebServiceTreeLoader\TreeLoaderService.asmx.cs">
+      <DependentUpon>TreeLoaderService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Examples\XRender\UserControl\UpdateContent\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerateSource.ashx.cs">
+      <DependentUpon>GenerateSource.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HighLighter\HighLighterUtils.cs" />
+    <Compile Include="HighLighter\HighLighterButton.ascx.cs">
+      <DependentUpon>HighLighterButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Code\SerializableEntity\ReadMe.txt" />
+    <Content Include="Examples\Getting_Started\Introduction\CHANGELOG\Default.aspx" />
+    <Content Include="Examples\Getting_Started\Introduction\README\Default.aspx" />
+    <Content Include="Examples\GridPanel\Shared\SuppliersService.asmx" />
+    <Content Include="HighLighter\HighLighterButton.ascx" />
+    <Content Include="HighLighter\Wilco.SyntaxHighlighter.dll" />
+    <Content Include="resources\images\404.png" />
+    <Content Include="resources\images\coolite.png" />
+    <Content Include="resources\images\loading.gif" />
+    <Content Include="resources\images\logo.png" />
+    <Content Include="resources\images\noimage.png" />
+    <Content Include="resources\images\sample-over.gif" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ext.Net.Utilities\Ext.Net.Utilities.csproj">
+      <Project>{5E459B57-416E-4644-9A2F-5668974ED994}</Project>
+      <Name>Ext.Net.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ext.Net\Ext.Net.csproj">
+      <Project>{195F2E70-F5E6-4A61-AAD9-2639657C29C4}</Project>
+      <Name>Ext.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\Northwind\Northwind.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Northwind.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\Northwind\Northwind.dbml.layout">
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </None>
+    <Content Include="Code\SharpZipLib\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Code\SharpZipLib\ReadMe.txt" />
+    <Content Include="Examples\ASP.NET_MVC\Applications\Northwind\Default.aspx" />
+    <Content Include="Examples\ASP.NET_MVC\config.xml" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\config.xml" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\Default.aspx" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\ajax-loader.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\feed-viewer.css" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\FeedViewer.js" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\article.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\bg.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\bullet.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\cancel.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\cmp-bg.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\comment-bg.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\delete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\details.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\feed-item.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\forward.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\go-to-post.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\grid-hrow.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\header-bar.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\header.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\myfeeds.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\new_tab.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\new_window.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\post-bg.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\post.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\preview-bottom.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\preview-hide.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\preview-right.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\preview.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\refresh.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\rss.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\rss_add.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\rss_delete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\rss_load.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\signin.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\signout.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\suggested.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\tab-close-on.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\tab-close.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\tabs.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\toolbar.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\wait.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\warning.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\resources\images\win-bg.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\config.xml" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\Default.aspx" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\bell.png" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\check.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\delete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\edit.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\hd-check.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\hrow.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-active.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-all.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-by-category.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-by-date.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-complete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-delete-task.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-filter.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-folder-delete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-folder-new.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-folder.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-list-delete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-list-new.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-list.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-mark-active.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-mark-complete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-multi-list.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-no-group.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-paste-new.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-show-active.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-show-all.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\icon-show-complete.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\loading.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\my-lists.png" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\panel-header.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\rbtn.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\reminder-hd.png" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\s.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\images\save.gif" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\main.css" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\resources\main.js" />
+    <Content Include="Examples\Combination_Samples\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Checkbox_Selector\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Checkbox_Selector\Default.aspx" />
+    <Content Include="Examples\DragDrop\Advanced\DragTracker\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\DragTracker\Default.aspx" />
+    <Content Include="Examples\Editor\Basic\FormPanel_Labels\config.xml" />
+    <Content Include="Examples\Editor\Basic\FormPanel_Labels\Default.aspx" />
+    <Content Include="Examples\Form\DropDownField\Overview\config.xml" />
+    <Content Include="Examples\Form\DropDownField\Overview\Default.aspx" />
+    <Content Include="Examples\Form\DropDownField\ValueText_Mode\config.xml" />
+    <Content Include="Examples\Form\DropDownField\ValueText_Mode\Default.aspx" />
+    <Content Include="Examples\Form\TriggerField\Trigger_Icons\config.xml" />
+    <Content Include="Examples\Form\TriggerField\Trigger_Icons\Default.aspx" />
+    <Content Include="Examples\Form\TriggerField\Trigger_with_Dialog_Editor\config.xml" />
+    <Content Include="Examples\Form\TriggerField\Trigger_with_Dialog_Editor\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Cell_Command\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Cell_Command\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Group_Command\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Group_Command\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Image_Command\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Image_Command\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Menu_Row_Command\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Menu_Row_Command\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Prepare_Commands\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Prepare_Commands\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Prepare_Toolbar\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Prepare_Toolbar\Default.aspx" />
+    <Content Include="Examples\GridPanel\Commands\Row_Command\config.xml" />
+    <Content Include="Examples\GridPanel\Commands\Row_Command\Default.aspx" />
+    <Content Include="Examples\GridPanel\Restful\Overview\config.xml" />
+    <Content Include="Examples\GridPanel\Restful\Overview\Default.aspx" />
+    <Content Include="Examples\GridPanel\Update\AutoSave\config.xml" />
+    <Content Include="Examples\GridPanel\Update\AutoSave\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\ColumnHeaderGroup\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\ColumnHeaderGroup\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\LockingGridView\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\LockingGridView\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\XTemplate\Dynamic_Template\config.xml" />
+    <Content Include="Examples\Miscellaneous\XTemplate\Dynamic_Template\Default.aspx" />
+    <Content Include="RefreshSiteMap.aspx" />
+    <Content Include="Examples\Buttons\ButtonGroup\Overview\config.xml" />
+    <Content Include="Examples\Buttons\ButtonGroup\Overview\Default.aspx" />
+    <Content Include="Examples\Buttons\ButtonGroup\Overview\images\add16.gif" />
+    <Content Include="Examples\Buttons\ButtonGroup\Overview\images\add24.gif" />
+    <Content Include="Examples\Buttons\ButtonGroup\Overview\images\add32.gif" />
+    <Content Include="Examples\DataView\Advanced\Grouping\config.xml" />
+    <Content Include="Examples\DataView\Advanced\Grouping\Default.aspx" />
+    <Content Include="Examples\DataView\Advanced\Grouping\resources\DashboardSchema.xml" />
+    <Content Include="Examples\DataView\Advanced\Grouping\resources\images\group-expand-sprite.gif" />
+    <Content Include="Examples\DataView\Advanced\Grouping\resources\images\icon.png" />
+    <Content Include="Examples\DataView\Advanced\Report\config.xml" />
+    <Content Include="Examples\DataView\Advanced\Report\Default.aspx" />
+    <Content Include="Examples\DragDrop\Advanced\Drag_with_State\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Drag_with_State\Default.aspx" />
+    <Content Include="Examples\DragDrop\Advanced\Example2\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Example2\Default.aspx" />
+    <Content Include="Examples\DragDrop\Advanced\Example1\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Example1\Default.aspx" />
+    <Content Include="Examples\DragDrop\Advanced\Example3\config.xml" />
+    <Content Include="Examples\DragDrop\Advanced\Example3\Default.aspx" />
+    <Content Include="Examples\DragDrop\Basic\Example3\config.xml" />
+    <Content Include="Examples\DragDrop\Basic\Example3\Default.aspx" />
+    <Content Include="Examples\DragDrop\Basic\Example2\config.xml" />
+    <Content Include="Examples\DragDrop\Basic\Example2\Default.aspx" />
+    <Content Include="Examples\DragDrop\Basic\Example1\config.xml" />
+    <Content Include="Examples\DragDrop\Basic\Example1\Default.aspx" />
+    <Content Include="Examples\DragDrop\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Field_to_Grid\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Field_to_Grid\Default.aspx" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_FormPanel\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_FormPanel\Default.aspx" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Grid2\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Grid2\Default.aspx" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Grid1\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Grid1\Default.aspx" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Tree\config.xml" />
+    <Content Include="Examples\DragDrop\Grid\Grid_to_Tree\Default.aspx" />
+    <Content Include="Examples\DragDrop\Panel\Swap_Dropable_Panel\config.xml" />
+    <Content Include="Examples\DragDrop\Panel\Swap_Dropable_Panel\Default.aspx" />
+    <Content Include="Examples\DragDrop\Panel\Dropable_Panel\config.xml" />
+    <Content Include="Examples\DragDrop\Panel\Dropable_Panel\Default.aspx" />
+    <Content Include="Examples\DragDrop\Panel\Draggable_Panel\config.xml" />
+    <Content Include="Examples\DragDrop\Panel\Draggable_Panel\Default.aspx" />
+    <Content Include="Examples\DragDrop\Tree\Tree_to_Div\config.xml" />
+    <Content Include="Examples\DragDrop\Tree\Tree_to_Div\Default.aspx" />
+    <Content Include="Examples\Element\Basic\Layer\config.xml" />
+    <Content Include="Examples\Element\Basic\Layer\Default.aspx" />
+    <Content Include="Examples\Element\Basic\Overview\config.xml" />
+    <Content Include="Examples\Element\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\Element\Basic\Overview\styles.css" />
+    <Content Include="Examples\Form\ComboBox\Linked_Combos_In_Grid\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Linked_Combos_In_Grid\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\Two_Columns\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Two_Columns\Default.aspx" />
+    <Content Include="Examples\GridPanel\ColumnModel\Column_Variations\config.xml" />
+    <Content Include="Examples\GridPanel\ColumnModel\Column_Variations\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Data_Prepare\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Data_Prepare\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Editor_Field_Mapping\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Editor_Field_Mapping\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Field_Converter\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Field_Converter\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Field_Mapping\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Field_Mapping\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Server_Mapping\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Server_Mapping\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Local_Paging_with_Remote_Data\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Local_Paging_with_Remote_Data\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\MultiLevel_GridPanel\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\MultiLevel_GridPanel\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\MultiLevel_GridPanel\thumbnail.png" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_GridPanels\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_GridPanels\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_GridPanels\thumbnail.png" />
+    <Content Include="Examples\ListView\config.xml" />
+    <Content Include="Examples\MessageBox\Notification\Client-Side_Notification\config.xml" />
+    <Content Include="Examples\MessageBox\Notification\Client-Side_Notification\Default.aspx" />
+    <Content Include="Examples\MessageBox\Notification\Overview\config.xml" />
+    <Content Include="Examples\MessageBox\Notification\Overview\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Save_Filter\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Save_Filter\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ClickRepeater\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\ClickRepeater\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Debug\Client_Activation\config.xml" />
+    <Content Include="Examples\Miscellaneous\Debug\Client_Activation\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Debug\Ext_Debug_Console\config.xml" />
+    <Content Include="Examples\Miscellaneous\Debug\Ext_Debug_Console\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Debug\Firebug_Lite_Console\config.xml" />
+    <Content Include="Examples\Miscellaneous\Debug\Firebug_Lite_Console\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ToolTips\GridPanel_Row_Tooltip\config.xml" />
+    <Content Include="Examples\Miscellaneous\ToolTips\GridPanel_Row_Tooltip\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ToolTips\Overview\images\house.jpg" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_ButtonGroup\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_ButtonGroup\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_ButtonGroup\images\add16.gif" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_ButtonGroup\images\add24.gif" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_ButtonGroup\images\add32.gif" />
+    <Content Include="Examples\TreePanel\Advanced\ColumnTree\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\ColumnTree\Default.aspx" />
+    <Content Include="Examples\TreePanel\Advanced\Filter\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\Filter\Default.aspx" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\Default.aspx" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\album.gif" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\center-bg.gif" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\organizer.css" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\dance_fever.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\gangster_zack.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\kids_hug.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\kids_hug2.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\sara_pink.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\sara_pumpkin.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\sara_smile.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\up_to_something.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\zack.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\zacks_grill.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\zack_dress.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\zack_hat.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\thumbs\zack_sink.jpg" />
+    <Content Include="Examples\TreePanel\Advanced\Remote_Mode\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\Remote_Mode\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Checkbox_Nodes\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Checkbox_Nodes\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\DragDrop_Between_Trees\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\DragDrop_Between_Trees\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Editors\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Editors\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Reorder_Nodes\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Reorder_Nodes\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Submit\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Submit\Default.aspx" />
+    <Content Include="Examples\XRender\Advanced\Parent_Add_Children\config.xml" />
+    <Content Include="Examples\XRender\Advanced\Parent_Add_Children\Default.aspx" />
+    <Content Include="Examples\XRender\Basic\Add_Items\config.xml" />
+    <Content Include="Examples\XRender\Basic\Add_Items\Default.aspx" />
+    <Content Include="Examples\XRender\Basic\New_Window\config.xml" />
+    <Content Include="Examples\XRender\Basic\New_Window\Default.aspx" />
+    <Content Include="Examples\XRender\config.xml" />
+    <Content Include="Examples\XRender\UserControl\UpdateContent\config.xml" />
+    <Content Include="Examples\XRender\UserControl\UpdateContent\Default.aspx" />
+    <Content Include="Examples\XRender\UserControl\UpdateContent\UserControl1.ascx" />
+    <Content Include="Examples\XRender\UserControl\UpdateContent\UserControl2.ascx" />
+    <Content Include="Home\Default.aspx" />
+    <Content Include="resources\icons\application.png" />
+    <Content Include="resources\icons\application_double.png" />
+    <Content Include="resources\icons\application_error.png" />
+    <Content Include="resources\icons\application_form.png" />
+    <Content Include="resources\icons\application_go.png" />
+    <Content Include="resources\icons\application_side_tree.png" />
+    <Content Include="resources\icons\application_view_columns.png" />
+    <Content Include="resources\icons\application_view_detail.png" />
+    <Content Include="resources\icons\application_view_tile.png" />
+    <Content Include="resources\icons\arrow_refresh.png" />
+    <Content Include="resources\icons\brick.png" />
+    <Content Include="resources\icons\button.png" />
+    <Content Include="resources\icons\buttons.png" />
+    <Content Include="resources\icons\clock.png" />
+    <Content Include="resources\icons\cog.png" />
+    <Content Include="resources\icons\color_swatch.png" />
+    <Content Include="resources\icons\compress.png" />
+    <Content Include="resources\icons\css.png" />
+    <Content Include="resources\icons\cup_black.png" />
+    <Content Include="resources\icons\desktop.png" />
+    <Content Include="resources\icons\editor.png" />
+    <Content Include="resources\icons\emoticon_smile.png" />
+    <Content Include="resources\icons\hourglass.png" />
+    <Content Include="resources\icons\information.png" />
+    <Content Include="resources\icons\keyboard.png" />
+    <Content Include="resources\icons\layout.png" />
+    <Content Include="resources\icons\lightning.png" />
+    <Content Include="resources\icons\link.png" />
+    <Content Include="resources\icons\page_white_code.png" />
+    <Content Include="resources\icons\page_white_csharp.png" />
+    <Content Include="resources\icons\plugin.png" />
+    <Content Include="resources\icons\script.png" />
+    <Content Include="resources\icons\script_code_red.png" />
+    <Content Include="resources\icons\shape_square_select.png" />
+    <Content Include="resources\icons\tab.png" />
+    <Content Include="resources\icons\table_multiple.png" />
+    <Content Include="resources\icons\tabpanel.png" />
+    <Content Include="resources\icons\textfield_rename.png" />
+    <Content Include="resources\icons\toolbar.png" />
+    <Content Include="resources\icons\viewport.png" />
+    <Content Include="resources\icons\wand.png" />
+    <Content Include="resources\icons\wrench.png" />
+    <Content Include="resources\images\ext_net_badge.gif" />
+    <Content Include="resources\images\ext_net_logo_small.gif" />
+    <Content Include="resources\js\main.js" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\button.gif" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\config.xml" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\Default.aspx" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\disabled.gif" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\overButton.gif" />
+    <Content Include="Examples\Buttons\Basic\ImageButton\pressed.gif" />
+    <Content Include="Examples\Buttons\Basic\LinkButton\config.xml" />
+    <Content Include="Examples\Buttons\Basic\LinkButton\Default.aspx" />
+    <Content Include="Examples\Buttons\Basic\Overview\thumbnail.gif" />
+    <Content Include="Examples\Buttons\Basic\Variations\config.xml" />
+    <Content Include="Examples\Buttons\Basic\Variations\SplitButtonsArrowBottom.ascx" />
+    <Content Include="Examples\Buttons\Basic\Variations\MenuButtonsArrowBottom.ascx" />
+    <Content Include="Examples\Buttons\Basic\Variations\SplitButtons.ascx" />
+    <Content Include="Examples\Buttons\Basic\Variations\MenuButtons.ascx" />
+    <Content Include="Examples\Buttons\Basic\Variations\ToggleButtons.ascx" />
+    <Content Include="Examples\Buttons\Basic\Variations\Default.aspx" />
+    <Content Include="Examples\Buttons\Basic\Variations\images\add32.gif" />
+    <Content Include="Examples\Buttons\Basic\Variations\images\add16.gif" />
+    <Content Include="Examples\Buttons\Basic\Variations\images\add24.gif" />
+    <Content Include="Examples\Buttons\Basic\Variations\NormalButtons.ascx" />
+    <Content Include="Examples\Buttons\config.xml" />
+    <Content Include="Examples\ColorPalete\Basic\Custom_Colors\config.xml" />
+    <Content Include="Examples\ColorPalete\Basic\Custom_Colors\Default.aspx" />
+    <Content Include="Examples\ColorPalete\Basic\Custom_View\config.xml" />
+    <Content Include="Examples\ColorPalete\Basic\Custom_View\Default.aspx" />
+    <Content Include="Examples\ColorPalete\Basic\Overview\config.xml" />
+    <Content Include="Examples\ColorPalete\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\ColorPalete\config.xml" />
+    <Content Include="Examples\Desktop\config.xml" />
+    <Content Include="Examples\Desktop\Introduction\Overview\config.xml" />
+    <Content Include="Examples\Desktop\Introduction\Overview\Default.aspx" />
+    <Content Include="Examples\Desktop\Introduction\Overview\Desktop.aspx" />
+    <Content Include="Examples\Desktop\Introduction\Overview\desktop.jpg" />
+    <Content Include="Examples\Desktop\Introduction\Overview\grid48x48.png" />
+    <Content Include="Examples\Desktop\Introduction\Overview\thumbnail.gif" />
+    <Content Include="Examples\Desktop\Introduction\Overview\user48x48.png" />
+    <Content Include="Examples\Desktop\Introduction\Overview\vista_start_button.gif" />
+    <Content Include="Examples\Desktop\Introduction\Overview\window48x48.png" />
+    <Content Include="Examples\Editor\Basic\Overview\config.xml" />
+    <Content Include="Examples\Editor\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\Editor\config.xml" />
+    <Content Include="Examples\Events\config.xml" />
+    <Content Include="Examples\Events\DirectEvents\Overview\config.xml" />
+    <Content Include="Examples\Events\DirectEvents\Overview\Default.aspx" />
+    <Content Include="Examples\Events\DirectEvents\Overview\thumbnail.gif" />
+    <Content Include="Examples\Events\DirectEvents\WebService\config.xml" />
+    <Content Include="Examples\Events\DirectEvents\WebService\Default.aspx" />
+    <Content Include="Examples\Events\DirectEvents\WebService\TestService.asmx" />
+    <Content Include="Examples\Events\DirectMethods\Exceptions\config.xml" />
+    <Content Include="Examples\Events\DirectMethods\Exceptions\Default.aspx" />
+    <Content Include="Examples\Events\DirectMethods\ID_Mode\Alias.ascx" />
+    <Content Include="Examples\Events\DirectMethods\ID_Mode\config.xml" />
+    <Content Include="Examples\Events\DirectMethods\ID_Mode\Default.aspx" />
+    <Content Include="Examples\Events\DirectMethods\Overview\config.xml" />
+    <Content Include="Examples\Events\DirectMethods\Overview\Default.aspx" />
+    <Content Include="Examples\Events\DirectMethods\Overview\thumbnail.gif" />
+    <Content Include="Examples\Events\DirectMethods\UserControls\config.xml" />
+    <Content Include="Examples\Events\DirectMethods\UserControls\Default.aspx" />
+    <Content Include="Examples\Events\DirectMethods\UserControls\MyUserControl.ascx" />
+    <Content Include="Examples\Events\DirectMethods\WebService\Default.aspx" />
+    <Content Include="Examples\Events\DirectMethods\WebService\JsonService.asmx" />
+    <Content Include="Examples\Events\DirectMethods\WebService\XmlService.asmx" />
+    <Content Include="Examples\Events\Listeners\Overview\config.xml" />
+    <Content Include="Examples\Events\Listeners\Overview\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\Items_Actions\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Items_Actions\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\MultiCombo\config.xml" />
+    <Content Include="Examples\Form\ComboBox\MultiCombo\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\TriggerButtons\config.xml" />
+    <Content Include="Examples\Form\ComboBox\TriggerButtons\Default.aspx" />
+    <Content Include="Examples\Form\Field_Note\Overview\config.xml" />
+    <Content Include="Examples\Form\Field_Note\Overview\Default.aspx" />
+    <Content Include="Examples\Form\FileUploadField\Basic\config.xml" />
+    <Content Include="Examples\Form\FileUploadField\Basic\Default.aspx" />
+    <Content Include="Examples\Form\FormPanel\Basic\Default.aspx" />
+    <Content Include="Examples\Form\FormPanel\Basic\config.xml" />
+    <Content Include="Examples\Form\FormPanel\Validation\config.xml" />
+    <Content Include="Examples\Form\FormPanel\Validation\Default.aspx" />
+    <Content Include="Examples\Form\HyperLink\Basic\config.xml" />
+    <Content Include="Examples\Form\HyperLink\Basic\Default.aspx" />
+    <Content Include="Examples\Form\Groups\Basic\config.xml" />
+    <Content Include="Examples\Form\Groups\Basic\Default.aspx" />
+    <Content Include="Examples\Form\Label\Basic\config.xml" />
+    <Content Include="Examples\Form\Label\Basic\Default.aspx" />
+    <Content Include="Examples\Form\Miscellaneous\Edit_Form_View\config.xml" />
+    <Content Include="Examples\Form\Miscellaneous\Edit_Form_View\Default.aspx" />
+    <Content Include="Examples\Form\Miscellaneous\Form_View\config.xml" />
+    <Content Include="Examples\Form\Miscellaneous\Form_View\Default.aspx" />
+    <Content Include="Examples\Form\MultiSelect\Overview\config.xml" />
+    <Content Include="Examples\Form\MultiSelect\Overview\Default.aspx" />
+    <Content Include="Examples\Form\MultiSelect\Submit_Data\config.xml" />
+    <Content Include="Examples\Form\MultiSelect\Submit_Data\Default.aspx" />
+    <Content Include="Examples\Form\SpinnerField\Overview\config.xml" />
+    <Content Include="Examples\Form\SpinnerField\Overview\Default.aspx" />
+    <Content Include="Examples\Form\TimeField\Overview\config.xml" />
+    <Content Include="Examples\Form\TimeField\Overview\Default.aspx" />
+    <Content Include="Examples\Form\TriggerField\Custom_Icon\config.xml" />
+    <Content Include="Examples\Form\TriggerField\Custom_Icon\resources\images\custom-trigger.gif" />
+    <Content Include="Examples\Form\TriggerField\Custom_Icon\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable2\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable2\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable2\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\_Simple_Editable\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ColumnModel\Ajax_Configuration\config.xml" />
+    <Content Include="Examples\GridPanel\ColumnModel\Ajax_Configuration\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Buffered_GridView\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Buffered_GridView\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_Ajax\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_Ajax\Csv.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_Ajax\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_Ajax\Excel.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_PostBack\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_PostBack\Csv.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_PostBack\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Export_Data_PostBack\Excel.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\countries.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\countries.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_Two_Grids\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_Two_Grids\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\TableGrid\thumbnail.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Two_Grids\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Two_Grids\WithSave.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Two_Grids\countries.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Two_Grids\countries.xsl" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Two_Grids\Default.aspx" />
+    <Content Include="Examples\GridPanel\MultiHeader\Filter\config.xml" />
+    <Content Include="Examples\GridPanel\MultiHeader\Filter\Default.aspx" />
+    <Content Include="Examples\GridPanel\MultiHeader\Overview\config.xml" />
+    <Content Include="Examples\GridPanel\MultiHeader\Overview\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Handler\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Handler\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\JSON_WebService\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\JSON_WebService\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Local_Data_Paging\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Local_Data_Paging\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Page\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Page\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Page\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\XML_WebService\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\XML_WebService\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_ListViews\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_ListViews\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Dynamic_ListViews\thumbnail.png" />
+    <Content Include="Examples\GridPanel\RowExpander\Shared_Component\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\Shared_Component\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Shared_Component\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Plugins\RowEditor\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\RowEditor\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\Selection_Memory\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\Selection_Memory\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\SlidingPager\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\SlidingPager\Default.aspx" />
+    <Content Include="Examples\GridPanel\Shared\PlantJsonService.asmx" />
+    <Content Include="Examples\GridPanel\System.Data\DataReader\config.xml" />
+    <Content Include="Examples\GridPanel\System.Data\DataReader\Csv.xsl" />
+    <Content Include="Examples\GridPanel\System.Data\DataReader\Default.aspx" />
+    <Content Include="Examples\GridPanel\System.Data\DataReader\Excel.xsl" />
+    <Content Include="Examples\GridPanel\System.Data\DataReader\thumbnail.png" />
+    <Content Include="Examples\GridPanel\System.Data\DataTable\config.xml" />
+    <Content Include="Examples\GridPanel\System.Data\DataTable\Csv.xsl" />
+    <Content Include="Examples\GridPanel\System.Data\DataTable\Default.aspx" />
+    <Content Include="Examples\GridPanel\System.Data\DataTable\Excel.xsl" />
+    <Content Include="Examples\GridPanel\System.Data\DataTable\thumbnail.png" />
+    <Content Include="Examples\Keys\config.xml" />
+    <Content Include="Examples\Keys\KeyMap\BorderLayout_Regions_Toggle\config.xml" />
+    <Content Include="Examples\Keys\KeyMap\BorderLayout_Regions_Toggle\Default.aspx" />
+    <Content Include="Examples\Keys\KeyNav\Basic\config.xml" />
+    <Content Include="Examples\Keys\KeyNav\Basic\Default.aspx" />
+    <Content Include="Examples\Keys\Panel_Keys\Grid_Rows_Delete\config.xml" />
+    <Content Include="Examples\Keys\Panel_Keys\Grid_Rows_Delete\Default.aspx" />
+    <Content Include="Examples\Keys\Panel_Keys\Window_Size\config.xml" />
+    <Content Include="Examples\Keys\Panel_Keys\Window_Size\Default.aspx" />
+    <Content Include="Examples\Layout\AbsoluteLayout\Absolute_Layout_Form\config.xml" />
+    <Content Include="Examples\Layout\AbsoluteLayout\Absolute_Layout_Form\Default.aspx" />
+    <Content Include="Examples\Layout\AbsoluteLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\AbsoluteLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_CodeBehind\config.xml" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_CodeBehind\thumbnail.gif" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_Markup\config.xml" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_Markup\Default.aspx" />
+    <Content Include="Examples\Layout\Accordion\Basic_in_Markup\thumbnail.gif" />
+    <Content Include="Examples\Layout\AnchorLayout\Anchor_With_Form\config.xml" />
+    <Content Include="Examples\Layout\AnchorLayout\Anchor_With_Form\Default.aspx" />
+    <Content Include="Examples\Layout\AnchorLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\AnchorLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\CardLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\CardLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\ColumnLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\ColumnLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\VBoxLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\VBoxLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\Fitlayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\Fitlayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\FormLayout\Field_Options\config.xml" />
+    <Content Include="Examples\Layout\FormLayout\Field_Options\Default.aspx" />
+    <Content Include="Examples\Layout\FormLayout\Overview\config.xml" />
+    <Content Include="Examples\Layout\FormLayout\Overview\Default.aspx" />
+    <Content Include="Examples\Layout\FormLayout\With_UserControls\config.xml" />
+    <Content Include="Examples\Layout\HBoxLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\HBoxLayout\Basic\Default.aspx" />
+    <Content Include="Examples\ListView\Basic\Overview\config.xml" />
+    <Content Include="Examples\ListView\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\MessageBox\Basic\ButtonsConfig\config.xml" />
+    <Content Include="Examples\MessageBox\Basic\ButtonsConfig\Default.aspx" />
+    <Content Include="Examples\MessageBox\Basic\Overview\config.xml" />
+    <Content Include="Examples\MessageBox\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\MessageBox\Basic\Overview\resources\images\download.gif" />
+    <Content Include="Examples\MessageBox\config.xml" />
+    <Content Include="Examples\Miscellaneous\FlashComponent\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\FlashComponent\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\History\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\History\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Locale\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\Locale\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Locale\User_Language\config.xml" />
+    <Content Include="Examples\Miscellaneous\Locale\User_Language\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Locale\Predefined_Language\config.xml" />
+    <Content Include="Examples\Miscellaneous\Locale\Predefined_Language\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ProgressBar\Client_Side_Update\config.xml" />
+    <Content Include="Examples\Miscellaneous\ProgressBar\Client_Side_Update\custom-bar.gif" />
+    <Content Include="Examples\Miscellaneous\ProgressBar\Client_Side_Update\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ProgressBar\Server_Side_Update\config.xml" />
+    <Content Include="Examples\Miscellaneous\ProgressBar\Server_Side_Update\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\resources\images\square.gif" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\resources\images\sara.jpg" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\resources\images\sara_and_zack.jpg" />
+    <Content Include="Examples\Miscellaneous\Resizable\Basic\resources\images\zack.jpg" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Ajax_Overview\config.xml" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Ajax_Overview\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Ajax_Overview\thumbnail.gif" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Overview\config.xml" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Overview\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Spotlight\Overview\thumbnail.gif" />
+    <Content Include="Examples\Miscellaneous\XTemplate\Overview\config.xml" />
+    <Content Include="Examples\Miscellaneous\XTemplate\Overview\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\XTemplate\Overview\thumbnail.gif" />
+    <Content Include="Examples\Panel\Basic\AutoLoad_MergeMode\Child.aspx" />
+    <Content Include="Examples\Panel\Basic\AutoLoad_MergeMode\config.xml" />
+    <Content Include="Examples\Panel\Basic\AutoLoad_MergeMode\Default.aspx" />
+    <Content Include="Examples\Panel\Basic\Deferred_Loading\Child.aspx" />
+    <Content Include="Examples\Panel\Basic\Deferred_Loading\config.xml" />
+    <Content Include="Examples\Panel\Basic\Deferred_Loading\Default.aspx" />
+    <Content Include="Examples\Panel\Basic\IFrame_Communication\A.aspx" />
+    <Content Include="Examples\Panel\Basic\IFrame_Communication\config.xml" />
+    <Content Include="Examples\Panel\Basic\IFrame_Communication\B.aspx" />
+    <Content Include="Examples\Panel\Basic\IFrame_Communication\Default.aspx" />
+    <Content Include="Examples\Panel\BodyMask\Standard_Mask\Default.aspx" />
+    <Content Include="Examples\TaskManager\Basic\Overview\config.xml" />
+    <Content Include="Examples\TaskManager\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\TaskManager\Basic\Overview\thumbnail.gif" />
+    <Content Include="Examples\TaskManager\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Flat_Toolbar\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Flat_Toolbar\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Overflow\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Overflow\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Overflow\images\add16.gif" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Overflow\images\add24.gif" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Overflow\images\add32.gif" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Switcher\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_Switcher\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_with_Menus\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_with_Menus\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Toolbar_with_Menus\thumbnail.gif" />
+    <Content Include="Examples\Toolbar\Menu\Layout_Toolbar\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Layout_Toolbar\Default.aspx" />
+    <Content Include="Examples\Toolbar\StatusBar\Advanced\config.xml" />
+    <Content Include="Examples\Toolbar\StatusBar\Advanced\Default.aspx" />
+    <Content Include="Examples\Toolbar\StatusBar\Overview\images\saving.gif" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_CodeBehind\thumbnail.gif" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_Markup\thumbnail.gif" />
+    <Content Include="Examples\TreePanel\Basic\Refresh_static_tree\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Refresh_static_tree\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\SiteMap\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\SiteMap\Default.aspx" />
+    <Content Include="Examples\TreePanel\Loaders\Ajax_Method_Loader\config.xml" />
+    <Content Include="Examples\TreePanel\Loaders\Ajax_Method_Loader\Default.aspx" />
+    <Content Include="Examples\TreePanel\Loaders\PageTreeLoader\config.xml" />
+    <Content Include="Examples\TreePanel\Loaders\PageTreeLoader\Default.aspx" />
+    <Content Include="Examples\TreePanel\Loaders\Using_Handler\config.xml" />
+    <Content Include="Examples\TreePanel\Loaders\Using_Handler\Default.aspx" />
+    <Content Include="Examples\TreePanel\Loaders\Using_Handler\thumbnail.gif" />
+    <Content Include="Examples\TreePanel\Loaders\WebServiceTreeLoader\config.xml" />
+    <Content Include="Examples\TreePanel\Loaders\WebServiceTreeLoader\Default.aspx" />
+    <Content Include="Examples\TreePanel\Loaders\WebServiceTreeLoader\thumbnail.gif" />
+    <Content Include="Examples\TreePanel\Loaders\WebServiceTreeLoader\TreeLoaderService.asmx" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example1\config.xml" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example1\Default.aspx" />
+    <Content Include="resources\examples.js" />
+    <Content Include="resources\images\new.gif" />
+    <Content Include="resources\images\newgray.gif" />
+    <None Include="Sample.Web.config" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Submit_to_Handler\SubmitHandler.ashx" />
+    <Content Include="Examples\GridPanel\Shared\PlantHandler.ashx" />
+    <Content Include="Examples\Events\DirectMethods\ID_Mode\NoneID.Master" />
+    <Content Include="Examples\Combination_Samples\Applications\Feed_Viewer\FeedProxy.ashx" />
+    <None Include="Examples\Portal\Basic\Deluxe\thumbnail.gif" />
+    <None Include="Examples\Portal\Basic\Simple\thumbnail.gif" />
+    <Content Include="Web.sitemap" />
+    <Content Include="Examples\TreePanel\Loaders\Using_Handler\TreeLoader.ashx" />
+    <Content Include="Examples\Buttons\Basic\Overview\arrow-down.gif" />
+    <Content Include="Examples\Buttons\Basic\Overview\config.xml" />
+    <Content Include="Examples\Buttons\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\DataView\Advanced\Overview\chooser.css" />
+    <Content Include="Examples\DataView\Advanced\Overview\ChooserDialog.ascx" />
+    <Content Include="Examples\DataView\Advanced\Overview\ChooserDialog.js" />
+    <Content Include="Examples\DataView\Advanced\Overview\config.xml" />
+    <Content Include="Examples\DataView\Advanced\Overview\Default.aspx" />
+    <Content Include="Examples\DataView\Basic\Overview\config.xml" />
+    <Content Include="Examples\DataView\Basic\Overview\data-view-plugins.js" />
+    <Content Include="Examples\DataView\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\DataView\Basic\With_Paging\config.xml" />
+    <Content Include="Examples\DataView\Basic\With_Paging\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\Overview\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Overview\Default.aspx" />
+    <Content Include="Examples\Form\DateField\From-To_Range\config.xml" />
+    <Content Include="Examples\Form\DateField\From-To_Range\Default.aspx" />
+    <Content Include="Examples\Form\TriggerField\Overview\config.xml" />
+    <Content Include="Examples\Form\TriggerField\Overview\Default.aspx" />
+    <Content Include="Examples\GridPanel\ColumnModel\Reconfigure\config.xml" />
+    <Content Include="Examples\GridPanel\ColumnModel\Reconfigure\Default.aspx" />
+    <Content Include="Examples\GridPanel\Selection_Models\Submitting_Values\config.xml" />
+    <Content Include="Examples\GridPanel\Selection_Models\Submitting_Values\Default.aspx" />
+    <Content Include="Examples\Layout\FormLayout\With_UserControls\Address.ascx" />
+    <Content Include="Examples\Layout\FormLayout\With_UserControls\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\config.xml" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\resources\images\slider-bg.png" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\resources\images\slider-thumb.png" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\resources\images\ticks.gif" />
+    <Content Include="Examples\Miscellaneous\Slider\Overview\thumbnail.gif" />
+    <Content Include="Examples\Miscellaneous\ToolTips\Overview\ajax-tip.html" />
+    <Content Include="Examples\Miscellaneous\ToolTips\Overview\config.xml" />
+    <Content Include="Examples\Miscellaneous\ToolTips\Overview\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ToolTips\Overview\thumbnail.gif" />
+    <Content Include="Examples\Panel\Basic\FormGroup\config.xml" />
+    <Content Include="Examples\Panel\Basic\FormGroup\Default.aspx" />
+    <Content Include="Examples\Panel\BodyMask\Custom_Mask\config.xml" />
+    <Content Include="Examples\Panel\BodyMask\Custom_Mask\Default.aspx" />
+    <Content Include="Examples\Panel\BodyMask\Custom_Mask\loading.gif" />
+    <Content Include="Examples\Panel\BodyMask\Standard_Mask\config.xml" />
+    <Content Include="Examples\PropertyGrid\Basic\Overview\config.xml" />
+    <Content Include="Examples\PropertyGrid\Basic\Overview\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Overview\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Overview\Default.aspx" />
+    <Content Include="Examples\Toolbar\StatusBar\Overview\config.xml" />
+    <Content Include="Examples\Toolbar\StatusBar\Overview\Default.aspx" />
+    <Content Include="Examples\config.xml" />
+    <Content Include="Examples\DataView\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Ajax_Linked_Combos\Cities.xml" />
+    <Content Include="Examples\Form\ComboBox\Ajax_Linked_Combos\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Ajax_Linked_Combos\Default.aspx" />
+    <Content Include="Examples\DataView\Shared\images\loading.gif" />
+    <Content Include="Examples\DataView\Shared\images\row-over.gif" />
+    <Content Include="Examples\DataView\Shared\images\selected.gif" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image1.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image10.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image2.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image3.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image4.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image5.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image6.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image7.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image8.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs2\Image9.JPG" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\dance_fever.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\gangster_zack.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\kids_hug.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\kids_hug2.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\sara_pink.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\sara_pumpkin.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\sara_smile.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\up_to_something.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\zack.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\zacks_grill.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\zack_dress.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\zack_hat.jpg" />
+    <Content Include="Examples\DataView\Shared\images\thumbs\zack_sink.jpg" />
+    <Content Include="Examples\Form\ComboBox\Linked_ComboBoxes\Cities.asmx" />
+    <Content Include="Examples\Form\ComboBox\Linked_ComboBoxes\Cities.xml" />
+    <Content Include="Examples\Form\ComboBox\Linked_ComboBoxes\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Linked_ComboBoxes\Default.aspx" />
+    <Content Include="Examples\Form\config.xml" />
+    <Content Include="Examples\GridPanel\config.xml" />
+    <Content Include="Examples\GridPanel\Update\SqlDataSource\config.xml" />
+    <Content Include="Examples\GridPanel\Update\SqlDataSource\Default.aspx" />
+    <Content Include="Examples\GridPanel\Update\SqlDataSource\States.xml" />
+    <Content Include="Examples\GridPanel\Data_with_Details\Form_Details\config.xml" />
+    <Content Include="Examples\GridPanel\Data_with_Details\Form_Details\Default.aspx" />
+    <Content Include="Examples\GridPanel\Data_with_Details\One-to-Many\config.xml" />
+    <Content Include="Examples\GridPanel\Data_with_Details\One-to-Many\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\TableGrid\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\TableGrid\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Xml_File_Loading\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Xml_File_Loading\Default.aspx" />
+    <Content Include="Examples\GridPanel\Selection_Models\Cell_Selection\config.xml" />
+    <Content Include="Examples\GridPanel\Selection_Models\Cell_Selection\Default.aspx" />
+    <Content Include="Examples\GridPanel\Selection_Models\Checkbox_Selection\config.xml" />
+    <Content Include="Examples\GridPanel\Selection_Models\Checkbox_Selection\Default.aspx" />
+    <Content Include="Examples\GridPanel\Selection_Models\Checkbox_Selection\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Selection_Models\Row_Selection\config.xml" />
+    <Content Include="Examples\GridPanel\Selection_Models\Row_Selection\Default.aspx" />
+    <Content Include="Examples\GridPanel\Selection_Models\Row_Selection\thumbnail.gif" />
+    <Content Include="Examples\Layout\BorderLayout\Collapsed_Region_Image\collapsed-south.png" />
+    <Content Include="Examples\Layout\BorderLayout\Collapsed_Region_Image\collapsed-west.png" />
+    <Content Include="Examples\Layout\BorderLayout\Collapsed_Region_Image\config.xml" />
+    <Content Include="Examples\Layout\BorderLayout\Collapsed_Region_Image\Default.aspx" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_CodeBehind\config.xml" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_CodeBehind\thumbnail.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window\vcard_edit.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window\WindowEditor.ascx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window_Remote\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window_Remote\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window_Remote\vcard_edit.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Details_Window_Remote\WindowEditor.ascx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Marking_Records\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Marking_Records\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\ScriptTag_Proxy\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\ScriptTag_Proxy\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Local\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Local\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Local\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Remote\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Remote\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\GridFilters_Remote\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Plugins\GroupingSummary\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\GroupingSummary\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\GroupingSummary\thumbnail.png" />
+    <Content Include="Examples\GridPanel\RowExpander\Local_Mode\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\Local_Mode\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Local_Mode\thumbnail.png" />
+    <Content Include="Examples\GridPanel\RowExpander\Remote_Mode\config.xml" />
+    <Content Include="Examples\GridPanel\RowExpander\Remote_Mode\Default.aspx" />
+    <Content Include="Examples\GridPanel\RowExpander\Remote_Mode\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Shared\EmployeesControler.ashx" />
+    <Content Include="Examples\GridPanel\Shared\JsonHandler.ashx" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\LinqDataSource\config.xml" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\LinqDataSource\Default.aspx" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\LinqDataSource\thumbnail.png" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\ObjectDataSource\config.xml" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\ObjectDataSource\Default.aspx" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\ObjectDataSource\thumbnail.png" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\SqlDataSource\config.xml" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\SqlDataSource\Default.aspx" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\SqlDataSource\thumbnail.png" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\XmlDataSource\config.xml" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\XmlDataSource\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_Column\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_Column\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Generic_List\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Generic_List\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grouping\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grouping\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grouping\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Json_Reader\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Json_Reader\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Numbered_Rows\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Numbered_Rows\Default.aspx" />
+    <Content Include="Examples\GridPanel\Shared\examples.js" />
+    <Content Include="Examples\GridPanel\Shared\Plants.xml" />
+    <Content Include="Examples\GridPanel\Shared\Plants.xsl" />
+    <Content Include="Examples\GridPanel\DataSource_Controls\XmlDataSource\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Layout\FitLayout\config.xml" />
+    <Content Include="Examples\GridPanel\Layout\FitLayout\Default.aspx" />
+    <Content Include="Examples\GridPanel\Layout\FitLayout\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Plugins\config.xml" />
+    <Content Include="Examples\GridPanel\Shared\PlantService.asmx" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_Markup\config.xml" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_Markup\Default.aspx" />
+    <Content Include="Examples\Layout\BorderLayout\Complex_in_Markup\thumbnail.gif" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_CodeBehind\config.xml" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_CodeBehind\thumbnail.gif" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_Markup\config.xml" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_Markup\Default.aspx" />
+    <Content Include="Examples\Layout\BorderLayout\Simple_in_Markup\thumbnail.gif" />
+    <Content Include="Examples\Layout\CenterLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\CenterLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\config.xml" />
+    <Content Include="Examples\Layout\FormLayout\Login\config.xml" />
+    <Content Include="Examples\Layout\FormLayout\Login\Default.aspx" />
+    <Content Include="Examples\Layout\RowLayout\Basic\config.xml" />
+    <Content Include="Examples\Layout\RowLayout\Basic\Default.aspx" />
+    <Content Include="Examples\Layout\TableLayout\Simple_in_CodeBehind\config.xml" />
+    <Content Include="Examples\Layout\TableLayout\Simple_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\Layout\TableLayout\Simple_in_Markup\config.xml" />
+    <Content Include="Examples\Layout\TableLayout\Simple_in_Markup\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\config.xml" />
+    <Content Include="Examples\Panel\Basic\AutoLoad\Child.aspx" />
+    <Content Include="Examples\Panel\Basic\AutoLoad\config.xml" />
+    <Content Include="Examples\Panel\Basic\AutoLoad\Default.aspx" />
+    <Content Include="Examples\Panel\config.xml" />
+    <Content Include="Examples\Portal\Basic\Deluxe\config.xml" />
+    <Content Include="Examples\Portal\Basic\Simple\config.xml" />
+    <Content Include="Examples\Portal\Basic\Simple\Default.aspx" />
+    <Content Include="Examples\Portal\Basic\Deluxe\Default.aspx" />
+    <Content Include="Examples\Portal\config.xml" />
+    <Content Include="Examples\PropertyGrid\config.xml" />
+    <Content Include="Examples\Toolbar\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Context_Menu\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Context_Menu\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Controls_In_Menu\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Controls_In_Menu\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\MenuPanel\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\MenuPanel\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_CodeBehind\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_Markup\config.xml" />
+    <Content Include="Examples\TreePanel\Basic\Built_in_Markup\Default.aspx" />
+    <Content Include="Examples\TreePanel\config.xml" />
+    <Content Include="Examples\ViewPort\Basic\Built_in_CodeBehind\config.xml" />
+    <Content Include="Examples\ViewPort\Basic\Built_in_CodeBehind\Default.aspx" />
+    <Content Include="Examples\ViewPort\Basic\Built_in_Markup\config.xml" />
+    <Content Include="Examples\ViewPort\Basic\Built_in_Markup\Default.aspx" />
+    <Content Include="Examples\ViewPort\config.xml" />
+    <Content Include="Examples\Window\Basic\AutoLoad_Website\config.xml" />
+    <Content Include="Examples\Window\Basic\AutoLoad_Website\Default.aspx" />
+    <Content Include="Examples\Window\Basic\AutoLoad_Website\thumbnail.gif" />
+    <Content Include="Examples\Window\Basic\Hello_World\config.xml" />
+    <Content Include="Examples\Window\Basic\Hello_World\Default.aspx" />
+    <Content Include="Examples\Window\Basic\Hello_World\thumbnail.gif" />
+    <Content Include="Examples\Window\Basic\Show\config.xml" />
+    <Content Include="Examples\Window\Basic\Show\Default.aspx" />
+    <Content Include="Examples\Window\config.xml" />
+    <Content Include="GenerateSource.ashx" />
+    <Content Include="ExampleLoader.ashx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\ArrayWithPaging\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\ArrayWithPaging\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\ArrayWithPaging\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Simple\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Simple\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Simple\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\Confirmation\config.xml" />
+    <Content Include="Examples\GridPanel\WebService_Connections\Confirmation\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\Confirmation\thumbnail.png" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreEvents\config.xml" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreEvents\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreEvents\thumbnail.png" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreCustomLogic\config.xml" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreCustomLogic\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\StoreCustomLogic\thumbnail.png" />
+    <Content Include="Examples\GridPanel\WebService_Connections\ServiceUsing\config.xml" />
+    <Content Include="Examples\GridPanel\WebService_Connections\ServiceUsing\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\ServiceUsing\thumbnail.png" />
+    <Content Include="Examples\GridPanel\WebService_Connections\HandlerUsing\config.xml" />
+    <Content Include="Examples\GridPanel\WebService_Connections\HandlerUsing\Default.aspx" />
+    <Content Include="Examples\GridPanel\WebService_Connections\HandlerUsing\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Shared\SuppliersSaveWithConfirmation.ashx" />
+    <Content Include="Examples\GridPanel\Shared\SuppliersSave.ashx" />
+    <Content Include="resources\css\examples.css" />
+    <Content Include="resources\css\main.css" />
+    <Content Include="resources\images\bg.gif" />
+    <Content Include="resources\images\collapse-all.gif" />
+    <Content Include="resources\images\expand-all.gif" />
+    <Content Include="resources\images\group-expand-sprite.gif" />
+    <Content Include="resources\images\loading32.gif" />
+    <Content Include="resources\images\layout-browser-hd-bg.gif" />
+    <Content Include="resources\images\noimage.gif" />
+    <Content Include="resources\images\title-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\SimpleTasks.sql" />
+    <None Include="App_Data\Northwind.sql" />
+    <Content Include="App_Data\Northwind.mdf">
+    </Content>
+    <Content Include="App_Data\Northwind_log.ldf">
+      <DependentUpon>Northwind.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\SimpleTasks.mdf">
+    </Content>
+    <Content Include="App_Data\SimpleTasks_log.ldf">
+      <DependentUpon>SimpleTasks.mdf</DependentUpon>
+    </Content>
+    <Content Include="Examples\Calendar\config.xml" />
+    <Content Include="Examples\Calendar\Overview\Basic\config.xml" />
+    <Content Include="Examples\Calendar\Overview\Basic\Default.aspx" />
+    <Content Include="Examples\Calendar\Overview\Remote_Data\config.xml" />
+    <Content Include="Examples\Calendar\Overview\Shared\Code\RemoteService.asmx" />
+    <Content Include="Examples\Calendar\Overview\Shared\Common\EventsViewer.ascx" />
+    <Content Include="Examples\Calendar\Overview\Remote_Data\Default.aspx" />
+    <Content Include="Examples\Calendar\Overview\Remote_Data\override.js" />
+    <Content Include="Examples\Calendar\Overview\Shared\resources\css\main.css" />
+    <Content Include="Examples\Calendar\Overview\Shared\resources\js\common.js" />
+    <Content Include="Examples\Combination_Samples\Applications\Simple_Tasks\Reset.aspx" />
+    <Content Include="Examples\Form\ComboBox\Custom_Search\Plants.ashx" />
+    <Content Include="404.aspx" />
+    <Content Include="Code\UI\CommentsWindow.ascx" />
+    <Content Include="Examples\Form\ComboBox\Custom_Drop_Down_List\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Custom_Drop_Down_List\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\Custom_Search\config.xml" />
+    <Content Include="Examples\Form\ComboBox\Custom_Search\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\Custom_Search\Plants.xml" />
+    <Content Include="Examples\Form\ComboBox\IconCombo\config.xml" />
+    <Content Include="Examples\Form\ComboBox\IconCombo\Default.aspx" />
+    <Content Include="Examples\Form\ComboBox\SelectBox\config.xml" />
+    <Content Include="Examples\Form\ComboBox\SelectBox\Default.aspx" />
+    <Content Include="Examples\Form\CompositeField\Overview\config.xml" />
+    <Content Include="Examples\Form\CompositeField\Overview\Default.aspx" />
+    <Content Include="Examples\Form\Field_Indicator\Overview\config.xml" />
+    <Content Include="Examples\Form\Field_Indicator\Overview\Default.aspx" />
+    <Content Include="Examples\Form\SliderField\Overview\config.xml" />
+    <Content Include="Examples\Form\SliderField\Overview\Default.aspx" />
+    <Content Include="Examples\Form\TextField\Password_Validation\config.xml" />
+    <Content Include="Examples\Form\TextField\Password_Validation\Default.aspx" />
+    <Content Include="Examples\Form\TextField\Spinner_Plugin\config.xml" />
+    <Content Include="Examples\Form\TextField\Spinner_Plugin\Default.aspx" />
+    <Content Include="Examples\Form\Validation\Custom_VType\config.xml" />
+    <Content Include="Examples\Form\Validation\Custom_VType\Default.aspx" />
+    <Content Include="Examples\Form\Validation\Remote_Validation\config.xml" />
+    <Content Include="Examples\Form\Validation\Remote_Validation\Default.aspx" />
+    <Content Include="Examples\Form\Validation\Remote_Validation\ValidationService.asmx" />
+    <Content Include="Examples\Getting_Started\config.xml" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\add16.gif" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\add24.gif" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\add32.gif" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\config.xml" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\Default.aspx" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\overview.css" />
+    <Content Include="Examples\Getting_Started\Introduction\Component_Overview\themes.js" />
+    <Content Include="Examples\Getting_Started\Introduction\Overview\config.xml" />
+    <Content Include="Examples\Getting_Started\Introduction\Overview\Default.aspx" />
+    <Content Include="Examples\Getting_Started\Introduction\Overview\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Remote_Load\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Remote_Load\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\Remote_Load\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ArrayGrid\DirectEvent_Creation\config.xml" />
+    <Content Include="Examples\GridPanel\ArrayGrid\DirectEvent_Creation\Default.aspx" />
+    <Content Include="Examples\GridPanel\ArrayGrid\DirectEvent_Creation\thumbnail.png" />
+    <Content Include="Examples\GridPanel\ColumnModel\Change_Models\config.xml" />
+    <Content Include="Examples\GridPanel\ColumnModel\Change_Models\Default.aspx" />
+    <Content Include="Examples\GridPanel\ColumnModel\RatingColumn\config.xml" />
+    <Content Include="Examples\GridPanel\ColumnModel\RatingColumn\Default.aspx" />
+    <Content Include="Examples\GridPanel\ColumnModel\RatingColumn\star_fade_n.png" />
+    <Content Include="Examples\GridPanel\ColumnModel\RatingColumn\star_n.png" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Grid_and_Store_Reconfigure\config.xml" />
+    <Content Include="Examples\GridPanel\Data_Presentation\Grid_and_Store_Reconfigure\Default.aspx" />
+    <Content Include="Examples\GridPanel\Editable\Editor_with_DirectMethod\config.xml" />
+    <Content Include="Examples\GridPanel\Editable\Editor_with_DirectMethod\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Add_Mode\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Add_Mode\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\btn.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\grid3-hd-btn.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\header_sprite.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\header_sprite_over.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\page-first.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\page-last.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\page-next.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\page-prev.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\refresh.gif" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\row-over.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\row-selected.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Custom_UI\toolbar-bg.png" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grid_TotalRow\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grid_TotalRow\Default.aspx" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grouping_TotalRow\config.xml" />
+    <Content Include="Examples\GridPanel\Miscellaneous\Grouping_TotalRow\Default.aspx" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Multiple_Sorting_Local\config.xml" />
+    <Content Include="Examples\GridPanel\Paging_and_Sorting\Multiple_Sorting_Local\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\HybridSummary\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\HybridSummary\Default.aspx" />
+    <Content Include="Examples\GridPanel\Plugins\HybridSummary\thumbnail.png" />
+    <Content Include="Examples\GridPanel\Plugins\EditableGrid\config.xml" />
+    <Content Include="Examples\GridPanel\Plugins\EditableGrid\Default.aspx" />
+    <Content Include="Examples\GridPanel\Restful\Overview\RestfulPersons.ashx" />
+    <Content Include="Examples\Layout\Accordion\Original_Header\config.xml" />
+    <Content Include="Examples\Layout\Accordion\Original_Header\Default.aspx" />
+    <Content Include="Examples\Layout\VBoxLayout\VBox_Form\config.xml" />
+    <Content Include="Examples\Layout\VBoxLayout\VBox_Form\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Icon\Icon_Summary\config.xml" />
+    <Content Include="Examples\Miscellaneous\Icon\Icon_Summary\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Icon\Icon_Summary\Generator.aspx" />
+    <Content Include="Examples\Miscellaneous\Icon\Icon_Summary\images\icon_summary.png" />
+    <Content Include="Examples\Miscellaneous\Icon\Icon_Summary\thumbnail.gif" />
+    <Content Include="Examples\Miscellaneous\Image\Pan\config.xml" />
+    <Content Include="Examples\Miscellaneous\Image\Pan\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Image\Resizable\config.xml" />
+    <Content Include="Examples\Miscellaneous\Image\Resizable\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Image\Shared\TheUniverseMap.jpg" />
+    <Content Include="Examples\Miscellaneous\Image\Shared\tokyo-subway-map.jpg" />
+    <Content Include="Examples\Miscellaneous\Mouse_Distance_Sensor\Basic\config.xml" />
+    <Content Include="Examples\Miscellaneous\Mouse_Distance_Sensor\Basic\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\Mouse_Distance_Sensor\Events\config.xml" />
+    <Content Include="Examples\Miscellaneous\Mouse_Distance_Sensor\Events\Default.aspx" />
+    <Content Include="Examples\Miscellaneous\ToolTips\GridPanel_Cell_Tooltip\config.xml" />
+    <Content Include="Examples\Miscellaneous\ToolTips\GridPanel_Cell_Tooltip\Default.aspx" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\config.xml" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\Default.aspx" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\resources\css\bubble.css" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\resources\images\bubble-cs.gif" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\resources\images\bubble-lr.gif" />
+    <Content Include="Examples\Panel\Miscellaneous\Bubble_Panel\resources\images\bubble-tb.gif" />
+    <Content Include="Examples\TabPanel\Basic\Add_Tabs\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Add_Tabs\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Advanced_Tabs\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Advanced_Tabs\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Advanced_Tabs\thumbnail.gif" />
+    <Content Include="Examples\TabPanel\Basic\Ajax_Load\ajax.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Ajax_Load\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Ajax_Load\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Ajax_Load\thumbnail.gif" />
+    <Content Include="Examples\TabPanel\Basic\Auto_Height\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Auto_Height\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Auto_Height\thumbnail.gif" />
+    <Content Include="Examples\TabPanel\Basic\Move_Component\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Move_Component\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Move_Tabs\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Move_Tabs\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\Show_Hide\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\Show_Hide\Default.aspx" />
+    <Content Include="Examples\TabPanel\Basic\TabMenu\config.xml" />
+    <Content Include="Examples\TabPanel\Basic\TabMenu\Default.aspx" />
+    <Content Include="Examples\TabPanel\config.xml" />
+    <Content Include="Examples\TabPanel\GroupTabPanel\Overview\config.xml" />
+    <Content Include="Examples\TabPanel\GroupTabPanel\Overview\Default.aspx" />
+    <Content Include="Examples\TabPanel\TabStrip\Overview\config.xml" />
+    <Content Include="Examples\TabPanel\TabStrip\Overview\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Horizontal_Menu\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Horizontal_Menu\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Menu_Layout\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Menu_Layout\Default.aspx" />
+    <Content Include="Examples\Toolbar\Menu\Top_Menu\config.xml" />
+    <Content Include="Examples\Toolbar\Menu\Top_Menu\Default.aspx" />
+    <Content Include="Examples\Toolbar\Plugins\ToolbarDroppable\config.xml" />
+    <Content Include="Examples\Toolbar\Plugins\ToolbarDroppable\Default.aspx" />
+    <Content Include="Examples\Toolbar\Plugins\ToolbarReorderable\config.xml" />
+    <Content Include="Examples\Toolbar\Plugins\ToolbarReorderable\Default.aspx" />
+    <Content Include="Examples\TreePanel\Advanced\Remote_Mode_with_Service\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\Remote_Mode_with_Service\Default.aspx" />
+    <Content Include="Examples\TreePanel\Advanced\Remote_Mode_with_Service\RemoteTree.asmx" />
+    <Content Include="Examples\TreePanel\Advanced\TreeGrid\config.xml" />
+    <Content Include="Examples\TreePanel\Advanced\TreeGrid\Default.aspx" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example3\config.xml" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example3\Default.aspx" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example2\config.xml" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example2\Default.aspx" />
+    <Content Include="Examples\_Just_For_Fun\Basic\Example2\search.png" />
+    <Content Include="resources\icons\calendar.png" />
+    <Content Include="resources\icons\comments.png" />
+    <Content Include="resources\icons\comment_add.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="resources\images\item-hd4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\Northwind_Reset.sql" />
+    <None Include="App_Data\SimpleTasks_Reset.sql" />
+    <None Include="Code\SimpleTasks\SimpleTasks.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SimpleTasks.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\SimpleTasks\SimpleTasks.dbml.layout">
+      <DependentUpon>SimpleTasks.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Examples\Calendar\Overview\Shared\resources\images\" />
+    <Folder Include="Examples\Getting_Started\Introduction\Overview\images\" />
+    <Folder Include="Examples\GridPanel\Plugins\GroupingSummary\resources\css\" />
+    <Folder Include="Examples\GridPanel\Plugins\GroupingSummary\resources\images\" />
+    <Folder Include="Examples\TreePanel\Basic\Built_in_CodeBehind\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53474</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Ext.Net.Examples</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '10.0'" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '9.0'" />
+  <!--<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />-->
+</Project>

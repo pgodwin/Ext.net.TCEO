@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<groups defaultIcon="/resources/images/icon.png">
+  <group title="Management">
+    <item>
+      <title>Customers</title>
+      <item-icon>/resources/images/icon.png</item-icon>
+      <accordion-item>acCustomers</accordion-item>
+      <menu-item>mnCustomerList</menu-item>
+    </item>
+
+    <item>
+      <title>Orders</title>
+      <accordion-item>acCustomers</accordion-item>
+      <menu-item>mnOrderList</menu-item>
+    </item>
+
+    <item>
+      <title>Reports</title>
+      <accordion-item>acReports</accordion-item>
+      <menu-item>mnCustomerAddressBook</menu-item>
+    </item>
+
+  </group>
+
+  <group title="Examples">
+    <item>
+      <title>REST Demo</title>
+      <accordion-item>acExamples</accordion-item>
+      <menu-item>mnRest</menu-item>
+    </item>
+
+    <item>
+      <title>Partial Views</title>
+      <accordion-item>acExamples</accordion-item>
+      <menu-item>mnPartial</menu-item>
+    </item>
+  </group>
+</groups>

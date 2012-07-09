@@ -1,0 +1,183 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
+
+<%@ Register src="WestMenu.ascx" tagname="WestMenu" tagprefix="uc1" %>
+<%@ Register src="HelpWindow.ascx" tagname="HelpWindow" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Northwind Traders - Sample web application using Ext.NET, ExtJS and ASP.NET MVC</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/main.css" />
+    <ext:ResourcePlaceHolder runat="server" />
+    <script type="text/javascript" src="/resources/js/site.js"></script>
+</head>
+<body>
+    <ext:ResourceManager runat="server" IDMode="Explicit" />
+    
+    <ext:ViewPort runat="server" Layout="border">
+        <Items>
+            <ext:Toolbar 
+                runat="server" 
+                Region="North" 
+                Height="25" 
+                Margins="0 0 4 0">
+                <Items>
+                    <ext:Label 
+                        runat="server" 
+                        Html='<%# this.ViewData["AppName"] %>' 
+                        Icon="Application" 
+                        Cls="title-label"
+                        AutoDataBind="true" 
+                        />
+                    <ext:ToolbarFill runat="server" />
+                    <ext:Button 
+                        runat="server" 
+                        Icon="StatusOnline" 
+                        Text='<%# this.ViewData["Username"] %>' 
+                        AutoDataBind="true">
+                        <Menu runat="server">
+                            <ext:Menu runat="server">
+                                <Items>
+                                    <ext:MenuItem Text="Profile" Icon="Magnifier" Disabled="true" />
+                                    <ext:MenuItem Text="Options" Icon="Wrench">
+                                        <Menu runat="server">
+                                            <ext:Menu runat="server">
+                                                <Items>
+                                                    <ext:MenuItem Text="Choose a Theme...">
+                                                        <Menu runat="server">
+                                                            <ext:Menu runat="server">
+                                                                <Items>
+                                                                    <ext:MenuItem Text="Default">
+                                                                        <Listeners>
+                                                                            <Click Handler="Ext.net.ResourceMgr.setTheme('/extjs/resources/css/ext-all-embedded-css/ext.axd', 'blue');" />
+                                                                        </Listeners>
+                                                                    </ext:MenuItem>
+                                                                    <ext:MenuItem Text="Gray">
+                                                                        <Listeners>
+                                                                            <Click Handler="Ext.net.ResourceMgr.setTheme('/extjs/resources/css/xtheme-gray-embedded-css/ext.axd', 'gray');" />
+                                                                        </Listeners>
+                                                                    </ext:MenuItem>
+                                                                    <ext:MenuItem Text="Slate">
+                                                                        <Listeners>
+                                                                            <Click Handler="Ext.net.ResourceMgr.setTheme('/extjs/resources/css/xtheme-slate-embedded-css/ext.axd', 'slate');" />
+                                                                        </Listeners>
+                                                                    </ext:MenuItem>
+                                                                </Items>
+                                                            </ext:Menu>
+                                                        </Menu>
+                                                    </ext:MenuItem>
+                                                </Items>
+                                            </ext:Menu>
+                                        </Menu>
+                                    </ext:MenuItem>
+                                </Items>
+                            </ext:Menu>
+                        </Menu>
+                    </ext:Button>
+                    <ext:Button runat="server" Icon="Help" Text="Help">
+                        <Menu runat="server">
+                            <ext:Menu runat="server">
+                                <Items>
+                                    <ext:MenuItem Text="Report a Defect" Icon="Bug">
+                                        <Listeners>
+                                            <Click Handler="Northwind.addTab({ title : el.text, url : '/Home/Form/', icon : el.iconCls });" />
+                                        </Listeners>
+                                    </ext:MenuItem>
+                                    <ext:MenuItem Text="About" Icon="Information">
+                                        <Listeners>
+                                            <Click Handler="#{winAbout}.show();" />
+                                        </Listeners>
+                                    </ext:MenuItem>
+                                </Items>
+                            </ext:Menu>
+                        </Menu>
+                    </ext:Button>
+                    <ext:ToolbarSeparator runat="server" />
+                    <ext:Button runat="server" Icon="LockGo" Text="Logout">
+                        <DirectEvents>
+                            <Click Url="/Account/Logout/" Before="Ext.getBody().mask('Good Bye!', 'x-mask-loading');" />
+                        </DirectEvents>
+                    </ext:Button>
+                </Items>
+            </ext:Toolbar>                    
+            <ext:Panel 
+                runat="server" 
+                Title="Explorer" 
+                Region="West" 
+                Width="225" 
+                CollapseMode="Mini" 
+                Margins="0 0 4 4">
+                <Content>
+                    <uc1:WestMenu ID="WestMenu1" runat="server" />
+                </Content>
+            </ext:Panel>
+            <ext:TabPanel 
+                ID="tpMain" 
+                runat="server" 
+                Region="Center" 
+                Margins="0 0 4 0" 
+                EnableTabScroll="true">
+                <Items>
+                    <ext:Panel 
+                        ID="Tab1" 
+                        runat="server" 
+                        Title="Home" 
+                        Icon="ApplicationForm" 
+                        Border="false">
+                        <AutoLoad 
+                            Url="/Home/Dashboard/" 
+                            Mode="IFrame" 
+                            ShowMask="true" 
+                            MaskMsg="Loading 'Dashboard'..." 
+                            />
+                    </ext:Panel>                        
+                </Items>
+                <Plugins>
+                    <ext:TabCloseMenu runat="server" />
+                </Plugins>
+            </ext:TabPanel>
+            <ext:Panel 
+                runat="server" 
+                Region="East" 
+                Width="225" 
+                Border="false" 
+                Layout="border" 
+                CollapseMode="Mini" 
+                Margins="0 4 4 0" 
+                Split="true">
+                <Items>
+                    <ext:Panel 
+                        runat="server" 
+                        Title="Sales Summary" 
+                        Height="225" 
+                        Region="North">
+                        <AutoLoad 
+                            Url="/Chart/SalesByYear/" 
+                            Mode="Merge" 
+                            Method="GET" 
+                            ShowMask="true" 
+                            PassParentSize="true" 
+                            />
+                    </ext:Panel>
+                    <ext:Panel 
+                        runat="server" 
+                        Title="Chat" 
+                        Region="Center"
+                        Margins="4 0 0 0"
+                        Icon="Comments" 
+                        Padding="5"
+                        Html="<span style='color:#999'>admin:</span> chat is coming..."
+                        />
+                </Items>
+            </ext:Panel>
+        </Items>
+    </ext:ViewPort>
+    
+    <uc2:HelpWindow ID="HelpWindow1" runat="server" />
+</body>
+</html>
